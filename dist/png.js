@@ -1,0 +1,1 @@
+export default function m(e,o=e){const t=new Uint8ClampedArray(e*o*4);for(let a=0;a<t.length;)t[a++]=t[a++]=t[a++]=Math.random()*255,t[a++]=255;const c=new ImageData(t,e),n=document.createElement("canvas");return n.width=e,n.height=o,n.getContext("2d").putImageData(c,0,0),n.toDataURL("image/png")}

@@ -1,0 +1,27 @@
+{
+	"name": "@koerismo/micronoise",
+	"description": "A very very small library to generate white noise images on the fly.",
+	"author": "Koerismo",
+	"version": "1.0.0",
+	"license": "MIT",
+	"keywords": [
+		"image",
+		"noise",
+		"random"
+	],
+	"type": "module",
+	"main": "./dist/gif.js",
+	"exports": {
+		".": null,
+		"./gif": "./dist/gif.js",
+		"./png": "./dist/png.js",
+		"./tga": "./dist/tga.js"
+	},
+	"scripts": {
+		"build": "node build.ts",
+		"test": "mocha"
+	},
+	"devDependencies": {
+		"esbuild": "^0.28.1"
+	}
+}
