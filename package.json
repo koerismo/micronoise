@@ -18,10 +18,11 @@
 		"./tga": "./dist/tga.js"
 	},
 	"scripts": {
-		"build": "node build.ts",
+		"build": "tsc && node build.ts",
 		"test": "mocha"
 	},
 	"devDependencies": {
-		"esbuild": "^0.28.1"
+		"esbuild": "^0.28.1",
+		"typescript": "^7.0.2"
 	}
 }
