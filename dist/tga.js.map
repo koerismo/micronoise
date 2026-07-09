@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../src/tga.ts"],
-  "sourcesContent": ["export function makeNoiseTga(width: number, height: number = width): string {\n\tconst fsize = width * height + 20;\n\tconst arr = new Uint8Array(fsize);\n\n\tarr[2] = 3;\n\tarr[7] = 8;\n\tarr[12] = width; arr[13] = width >> 8;\n\tarr[14] = height; arr[15] = height >> 8;\n\tarr[16] = 8;\n\n\tfor (let i=20; i<fsize; i++)\n\t\tarr[i] = Math.round(Math.random() * 255);\n\n\treturn 'data:image/targa;base64,' + btoa(String.fromCharCode(...arr));\n}\n"],
-  "mappings": "AAAO,gBAAS,aAAaA,EAAeC,EAAiBD,EAAe,CAC3E,MAAME,EAAQF,EAAQC,EAAS,GACzBE,EAAM,IAAI,WAAWD,CAAK,EAEhCC,EAAI,CAAC,EAAI,EACTA,EAAI,CAAC,EAAI,EACTA,EAAI,EAAE,EAAIH,EAAOG,EAAI,EAAE,EAAIH,GAAS,EACpCG,EAAI,EAAE,EAAIF,EAAQE,EAAI,EAAE,EAAIF,GAAU,EACtCE,EAAI,EAAE,EAAI,EAEV,QAASC,EAAE,GAAIA,EAAEF,EAAOE,IACvBD,EAAIC,CAAC,EAAI,KAAK,MAAM,KAAK,OAAO,EAAI,GAAG,EAExC,MAAO,2BAA6B,KAAK,OAAO,aAAa,GAAGD,CAAG,CAAC,CACrE",
-  "names": ["width", "height", "fsize", "arr", "i"]
+  "sourcesContent": ["export default function makeNoiseTga(width: number, height: number = width): string {\n\tconst fsize = width * height + 20;\n\tconst arr = new Uint8Array(fsize);\n\n\tarr[2] = 3;\n\tarr[7] = 8;\n\tarr[12] = width; arr[13] = width >> 8;\n\tarr[14] = height; arr[15] = height >> 8;\n\tarr[16] = 8;\n\n\tfor (let i=20; i<fsize; i++)\n\t\tarr[i] = Math.round(Math.random() * 255);\n\n\treturn 'data:image/targa;base64,' + btoa(String.fromCharCode(...arr));\n}\n"],
+  "mappings": "AAAA,wBAAwBA,EAAaC,EAAeC,EAAiBD,EAAe,CACnF,MAAME,EAAQF,EAAQC,EAAS,GACzBE,EAAM,IAAI,WAAWD,CAAK,EAEhCC,EAAI,CAAC,EAAI,EACTA,EAAI,CAAC,EAAI,EACTA,EAAI,EAAE,EAAIH,EAAOG,EAAI,EAAE,EAAIH,GAAS,EACpCG,EAAI,EAAE,EAAIF,EAAQE,EAAI,EAAE,EAAIF,GAAU,EACtCE,EAAI,EAAE,EAAI,EAEV,QAASC,EAAE,GAAIA,EAAEF,EAAOE,IACvBD,EAAIC,CAAC,EAAI,KAAK,MAAM,KAAK,OAAO,EAAI,GAAG,EAExC,MAAO,2BAA6B,KAAK,OAAO,aAAa,GAAGD,CAAG,CAAC,CACrE",
+  "names": ["makeNoiseTga", "width", "height", "fsize", "arr", "i"]
 }

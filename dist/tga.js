@@ -1,1 +1,1 @@
-export function makeNoiseTga(a,n=a){const e=a*n+20,r=new Uint8Array(e);r[2]=3,r[7]=8,r[12]=a,r[13]=a>>8,r[14]=n,r[15]=n>>8,r[16]=8;for(let o=20;o<e;o++)r[o]=Math.round(Math.random()*255);return"data:image/targa;base64,"+btoa(String.fromCharCode(...r))}
+export default function t(a,n=a){const o=a*n+20,r=new Uint8Array(o);r[2]=3,r[7]=8,r[12]=a,r[13]=a>>8,r[14]=n,r[15]=n>>8,r[16]=8;for(let e=20;e<o;e++)r[e]=Math.round(Math.random()*255);return"data:image/targa;base64,"+btoa(String.fromCharCode(...r))}

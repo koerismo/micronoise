@@ -1,4 +1,4 @@
-export function makeNoiseTga(width: number, height: number = width): string {
+export default function makeNoiseTga(width: number, height: number = width): string {
 	const fsize = width * height + 20;
 	const arr = new Uint8Array(fsize);
 

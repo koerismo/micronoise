@@ -14,5 +14,6 @@ export default function makeNoisePng(width: number, height: number = width): str
 	const ctx = canvas.getContext('2d')!;
 	ctx.putImageData(image, 0, 0);
 	
+	canvas.remove();
 	return canvas.toDataURL('image/png');
 }

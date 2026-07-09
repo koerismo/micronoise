@@ -1,1 +1,1 @@
-export declare function makeNoiseTga(width: number, height?: number): string;
+export default function makeNoiseTga(width: number, height?: number): string;

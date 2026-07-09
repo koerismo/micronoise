@@ -16,8 +16,10 @@ I wanted to add a noise image to my website, but I ran into some problems:
 Turns out, even with good compression, an *acceptable* quality noise image is about 6kb large. So what if you just generated them on the fly?
 
 
-| Format | Minified Size | Avg. Speed | Notes                           |
-| ------ | ------------- | ---------- | ------------------------------- |
-| png    |  299b         | ~~~        | Relies on HTML Canvas.          |
-| gif    |  393b         | ~~~        |                                 |
-| tga    |  253b         | ~~~        | Not commonly supported.         |
+| Format | Minified Size | Avg. Speed* | Notes                           |
+| ------ | ------------- | ----------- | ------------------------------- |
+| png    |  299b         | ~8.9ms      | Relies on HTML Canvas.          |
+| gif    |  393b         | ~3.8ms      |                                 |
+| tga    |  253b         | ~10.4ms     | Not commonly supported.         |
+
+*\* Tested on Firefox to create a 512x512 image.*
