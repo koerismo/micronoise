@@ -17,5 +17,5 @@ export default function makeNoiseGif(width: number, height: number): string {
 			stringOfChars(length, () => toStr(Math.round(Math.random() * 127)));
 	}
 
-	return 'data:image/gif,base64;' + btoa(`GIF89a${sizeString}\xf6\0\0${colorTable},\0\0\0\0${sizeString}\0\x07${body}\0;`);
+	return 'data:image/gif;base64,' + btoa(`GIF89a${sizeString}\xf6\0\0${colorTable},\0\0\0\0${sizeString}\0\x07${body}\0;`);
 }

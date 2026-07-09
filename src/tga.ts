@@ -11,5 +11,5 @@ export function makeNoiseTga(width: number, height: number = width): string {
 	for (let i=20; i<fsize; i++)
 		arr[i] = Math.round(Math.random() * 255);
 
-	return 'data:image/targa,base64;' + btoa(String.fromCharCode(...arr));
+	return 'data:image/targa;base64,' + btoa(String.fromCharCode(...arr));
 }
