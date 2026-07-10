@@ -1,8 +1,35 @@
-export default function makeNoiseGif(width: number, height: number): string {
+const clampUint = /* @__PURE__ */ (x: number, max: number) => {
+	return x < 0 ? 0 : (x > max ? max : x);
+}
+
+const rgbTableCentered = /* @__PURE__ */ () => {
+	const size = 384;
+
+	const colors = new Uint8Array(size);
+	const centroid = [0, 0, 0];
+
+	// Write colors & accumulate centroid.
+	// We need to do this, since the entire image can be easily biased
+	// towards a single color if enough of the palette consists of it.
+	for (let i=0; i<size; i++) {
+		centroid[i % 3] += ((colors[i] = Math.round(Math.random() * 255)) - 127.5) * (1 / 128);
+	}
+
+	// Subtract centroid & clamp
+	for (let i=0; i<size; i++) {
+		colors[i] = clampUint(colors[i] - centroid[i % 3], 255);
+	}
+
+	return colors;
+}
+
+export default function makeNoiseGif(width: number, height: number = width): string {
 	const toStr = String.fromCharCode;
 	const stringOfChars = (length: number, cb: (x: undefined, i: number) => string) => Array.from({ length }, cb).join('');
 
-	const colorTable = stringOfChars(128, (_, i) => toStr(Math.round(i * 2.0079)).repeat(3));	
+	const colorTable = RGB ?
+		toStr(...rgbTableCentered()) :
+		stringOfChars(128, (_, i) => toStr(Math.round(i * (255 / 127))).repeat(3));
 
 	const toU16String = (n: number) => toStr(n & 0xff, n >> 8);
 	const sizeString = toU16String(width) + toU16String(height);

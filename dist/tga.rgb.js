@@ -1,0 +1,1 @@
+export default function o(r,e=r){const t=r*e*3+20,a=new Uint8Array(t);a[2]=2,a[7]=8,a[12]=r,a[13]=r>>8,a[14]=e,a[15]=e>>8,a[16]=24;for(let n=20;n<t;n++)a[n]=Math.round(Math.random()*255);return"data:image/targa;base64,"+a.toBase64()}

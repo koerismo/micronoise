@@ -15,7 +15,10 @@
 		".": null,
 		"./gif": "./dist/gif.js",
 		"./png": "./dist/png.js",
-		"./tga": "./dist/tga.js"
+		"./tga": "./dist/tga.js",
+		"./gif/rgb": { "import": "./dist/gif.rgb.js", "types": "./dist/gif.js" },
+		"./png/rgb": { "import": "./dist/png.rgb.js", "types": "./dist/png.js" },
+		"./tga/rgb": { "import": "./dist/tga.rgb.js", "types": "./dist/tga.js" }
 	},
 	"scripts": {
 		"build": "tsc && node build.ts",
