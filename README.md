@@ -22,12 +22,12 @@ Turns out, even with good compression, an *acceptable* quality noise image is ab
 
 | Format   | Minified Size | Avg. Speed* | Notes                        |
 | -------- | ------------- | ----------- | ---------------------------- |
-| png      |  308b         | ~8.9ms      | Relies on HTML Canvas.       |
-| gif      |  398b         | ~3.8ms      |                              |
-| tga      |  231b         | ~10.4ms     |                              |
+| png      |  308b         | ~8.8ms      | Relies on HTML Canvas.       |
+| gif      |  398b         | ~10.9ms     |                              |
+| tga      |  231b         | ~1.5ms      |                              |
 |          |               |             |                              |
-| png/rgb  |  298b         |             | Relies on HTML Canvas.       |
-| gif/rgb  |  571b         |             |                              |
-| tga/rgb  |  234b         |             |                              |
+| png/rgb  |  298b         | ~24.6ms     | Relies on HTML Canvas.       |
+| gif/rgb  |  571b         | ~9.9ms      |                              |
+| tga/rgb  |  234b         | ~3.1ms      |                              |
 
-*\* Tested on Firefox to create a 512x512 image.*
+*\* Tested on Firefox to create 512x512 images with 200 iterations.*
